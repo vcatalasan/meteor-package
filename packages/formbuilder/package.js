@@ -14,7 +14,9 @@ Package.onUse(function(api) {
     api.versionsFrom('1.2.0.2');
     api.use('ecmascript');
     api.use("templating", "client");
-    api.addFiles(['formbuilder.html','formbuilder.js'], 'client');
+    api.use('fortawesome:fontawesome', 'client');
+    //it is important to include the html file before the js
+    api.addFiles(['formbuilder.html','formbuilder.css','formbuilder.js'], 'client');
 });
 
 Package.onTest(function(api) {
@@ -22,5 +24,6 @@ Package.onTest(function(api) {
     api.use("templating", "client");
     api.use('tinytest');
     api.use('vcatalasan:formbuilder');
-    api.addFiles(['formbuilder.html','formbuilder-tests.js'], 'client');
+    //it is important to include the html file before the js
+    api.addFiles(['formbuilder.html','formbuilder.css','formbuilder-tests.js'], 'client');
 });
