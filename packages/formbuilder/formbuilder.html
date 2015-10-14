@@ -880,91 +880,39 @@
                     </div><!-- End of Left Part -->
                 </td>
                 <td style='vertical-align: top'>
-                    <div class="preview_form">
-
-
-                        <h4>You can <strong>drag</strong> and <strong>drop</strong> the fields to change their order.<br>Click to edit them.
-                            <a href='form.php?id=_GET[id].&preview=true; ' target='_blank'>Live Preview (new window)</a>
-                        </h4>
-                        <div class='html_here'>
-                            form_id = "123_GET[id]"
-                            <form class="a_{{form_id}} nform bootstrap {{con[0].cl_hidden_fields}} {{con[0].user_save_form}} {{con[0].placeholder}} {{con[0].frame}} {{con[0].direction}} {{con[0].theme}} {{con[0].themev}} {{con[0].themef}} {{con[0].block_label}} star_{{con[0].show_star_validation}} {{con[0].flayout}}" action='javascript:submit_formcraft({{form_id}});' ng-style='{width: con[0].fw, borderRadius: con[0].fr+"px", MozBorderRadius: con[0].fr+"px", WebkitBorderRadius: con[0].fr+"px", fontFamily: con[0].formfamily, backgroundImage: con[0].bg_image, background: con[0].bg_transparent}' id='{{form_id}}'>
-                                <input type='hidden' class='form_id' val="_GET['id']" ng-model='con[0].form_main_id'>
-                                <div id='fe_title' class='nform_li form_title {{con[0].theme}}' ng-style='{fontSize: con[0].ft_px+"px", borderTopLeftRadius: con[0].fr+"px", MozBorderTopLeftRadius: con[0].fr+"px", WebkitBorderTopLeftRadius: con[0].fr+"px", borderTopRightRadius: con[0].fr+"px", MozBorderTopRightRadius: con[0].fr+"px", WebkitBorderTopRightRadius: con[0].fr+"px", color: con[0].ft_co, backgroundColor: con[0].ft_bg, fontFamily: con[0].tfamily, fontWeight: con[0].tbold, backgroundImage: con[0].bg_image, background: con[0].bg_transparent, textAlign: con[0].ftalign}'>
-                                {{con[0].form_title}}
-                                </div>
-                                <ul class='form_ul clearfix {{con[0].theme}}' id='form_ul'>
-                                    <li scale ng-repeat="el in build" ng-style='{paddingBottom: con[0].space+"px", paddingTop: con[0].space+"px"}' id='fe_{{$index}}_{{form_id}}' class='nform_li' ng-class='[el.default, el.inline, con[0].field_align, el.li_class, "fe_"+$index]'>
-                                        <div compile="el.el_f" ng-style='{marginBottom: el.divspa, marginTop: el.divspa}'></div>
-                                        <span class='element_id'>{{index}}</span>
-                                    </li>
-                                </ul>
-                                <div id='fe_submit' class='form_submit' style='position: relative; display: block'>
-                                    <span style='text-align: center; display: inline-block; padding-top: 8px; padding-bottom: 4px'><a class='ref_link' ng-href='http://codecanyon.net/item/formcraft-premium-wordpress-form-builder/5335056?ref={{con[0].ruser}}' compile="con[0].rlink" target='_blank' title='Opens in a new tab'></a></span>
-                                    <div class='res_div'><span class='nform_res'></span></div>
-                                </div>
-                            </form>
-                        </div>
-                    </div><!-- End of Right Part -->
+                    {{> previewForm}}
                 </td>
             </tr>
         </table>
     </div><!-- End of Cover -->
 
-    <script language="JavaScript">
-        jQuery(document).ready(function() {
+</template>
 
-            var formfield;
+<template name="previewForm">
+    <div class="preview_form">
 
-            jQuery('.cpicker').spectrum({
-                showInput: true,
-                showAlpha: true,
-                clickoutFiresChange: true,
-                preferredFormat: 'rgb',
-                showButtons: false,
-                change: function(color){
-                    jQuery(this).trigger('input');
-                },
-                move: function(color){
-                    jQuery(this).trigger('input');
-                }
-            });
+        <h4>You can <strong>drag</strong> and <strong>drop</strong> the fields to change their order.<br>Click to edit them.
+            <a href='form.php?id=_GET[id].&preview=true; ' target='_blank'>Live Preview (new window)</a>
+        </h4>
+        <div class='html_here'>
+            form_id = "123_GET[id]"
+            <form class="a_{{form_id}} nform bootstrap {{con[0].cl_hidden_fields}} {{con[0].user_save_form}} {{con[0].placeholder}} {{con[0].frame}} {{con[0].direction}} {{con[0].theme}} {{con[0].themev}} {{con[0].themef}} {{con[0].block_label}} star_{{con[0].show_star_validation}} {{con[0].flayout}}" action='javascript:submit_formcraft({{form_id}});' ng-style='{width: con[0].fw, borderRadius: con[0].fr+"px", MozBorderRadius: con[0].fr+"px", WebkitBorderRadius: con[0].fr+"px", fontFamily: con[0].formfamily, backgroundImage: con[0].bg_image, background: con[0].bg_transparent}' id='{{form_id}}'>
+                <input type='hidden' class='form_id' val="_GET['id']" ng-model='con[0].form_main_id'>
+                <div id='fe_title' class='nform_li form_title {{con[0].theme}}' ng-style='{fontSize: con[0].ft_px+"px", borderTopLeftRadius: con[0].fr+"px", MozBorderTopLeftRadius: con[0].fr+"px", WebkitBorderTopLeftRadius: con[0].fr+"px", borderTopRightRadius: con[0].fr+"px", MozBorderTopRightRadius: con[0].fr+"px", WebkitBorderTopRightRadius: con[0].fr+"px", color: con[0].ft_co, backgroundColor: con[0].ft_bg, fontFamily: con[0].tfamily, fontWeight: con[0].tbold, backgroundImage: con[0].bg_image, background: con[0].bg_transparent, textAlign: con[0].ftalign}'>
+                    {{con[0].form_title}}
+                </div>
+                <ul class='form_ul clearfix {{con[0].theme}}' id='form_ul'>
+                    <li scale ng-repeat="el in build" ng-style='{paddingBottom: con[0].space+"px", paddingTop: con[0].space+"px"}' id='fe_{{$index}}_{{form_id}}' class='nform_li' ng-class='[el.default, el.inline, con[0].field_align, el.li_class, "fe_"+$index]'>
+                        <div compile="el.el_f" ng-style='{marginBottom: el.divspa, marginTop: el.divspa}'></div>
+                        <span class='element_id'>{{index}}</span>
+                    </li>
+                </ul>
+                <div id='fe_submit' class='form_submit' style='position: relative; display: block'>
+                    <span style='text-align: center; display: inline-block; padding-top: 8px; padding-bottom: 4px'><a class='ref_link' ng-href='http://codecanyon.net/item/formcraft-premium-wordpress-form-builder/5335056?ref={{con[0].ruser}}' compile="con[0].rlink" target='_blank' title='Opens in a new tab'></a></span>
+                    <div class='res_div'><span class='nform_res'></span></div>
+                </div>
+            </form>
+        </div>
 
-            jQuery('.custom_css_text').keyup(function()
-            {
-                var abc = jQuery(this).val();
-                jQuery('.custom_css_show').text('<style>'+abc+'</style>');
-            })
-
-
-
-            jQuery('body').on('click', '.upload_logo_formpage', function() {
-                formfield = jQuery(this).prev('input');
-                tb_show('','media-upload.php?TB_iframe=true');
-                return false;
-            });
-
-
-            window.old_tb_remove = window.tb_remove;
-            window.tb_remove = function() {
-                window.old_tb_remove();
-                formfield=null;
-            };
-
-
-            window.original_send_to_editor = window.send_to_editor;
-            window.send_to_editor = function(html){
-                if (formfield) {
-                    fileurl = "url("+jQuery('img',html).attr('src')+")";
-                    jQuery(formfield).val(fileurl);
-                    jQuery(formfield).trigger('input');
-                    tb_remove();
-                } else {
-                    window.original_send_to_editor(html);
-                }
-            };
-
-        });
-    </script>
-
+    </div><!-- End of Right Part -->
 </template>

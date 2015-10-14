@@ -6,3 +6,9 @@ Template.formBuilder.helpers({
     }
 });
 
+Template.previewForm.helpers({
+    con: function(){
+        return 'XX';
+    }
+});
+
