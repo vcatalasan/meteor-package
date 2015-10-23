@@ -13,10 +13,27 @@ Package.describe({
 Package.onUse(function(api) {
     api.versionsFrom('1.2.0.2');
     api.use('ecmascript');
-    api.use("templating", "client");
+    //api.use('templating', 'client');
+    api.use('angular', 'client');
+    api.use('angular:angular-route', 'client');
+    api.use('angularui:angular-ui-router', 'client');
+    api.use('twbs:bootstrap', 'client');
     api.use('fortawesome:fontawesome', 'client');
+    api.use('dbernhard:jquery-ui-draggable', 'client');
+    api.use('scmart:jquery-timepicker', 'client');
     //it is important to include the html file before the js
-    api.addFiles(['formbuilder.html','formbuilder.css','formbuilder.js'], 'client');
+    api.addFiles([
+        'client/css/style.css',
+        'client/css/boxes.css',
+        'client/css/ratings.css',
+        'client/css/nform_style.css',
+        'client/builder/views/builder.ng.html',
+        'client/lib/app.ng.js',
+        'client/builder/controllers/builder.ng.js',
+        'client/builder/build.ng.js',
+        'client/builder/form.ng.js'],
+        'client'
+    );
 });
 
 Package.onTest(function(api) {
