@@ -12,26 +12,31 @@ Package.describe({
 
 Package.onUse(function(api) {
     api.versionsFrom('1.2.0.2');
-    api.use('ecmascript');
+    //api.use('ecmascript');
     //api.use('templating', 'client');
+    api.use('jquery', 'client');
+    api.use('mrt:jquery-ui-sortable', 'client');
     api.use('angular', 'client');
     api.use('angular:angular-route', 'client');
     api.use('angularui:angular-ui-router', 'client');
     api.use('twbs:bootstrap', 'client');
+    api.use('mrt:datatables', 'client');
     api.use('fortawesome:fontawesome', 'client');
     api.use('dbernhard:jquery-ui-draggable', 'client');
     api.use('scmart:jquery-timepicker', 'client');
     //it is important to include the html file before the js
     api.addFiles([
-        'client/css/style.css',
-        'client/css/boxes.css',
-        'client/css/ratings.css',
-        'client/css/nform_style.css',
-        'client/builder/views/builder.ng.html',
-        'client/lib/app.ng.js',
-        'client/builder/controllers/builder.ng.js',
-        'client/builder/build.ng.js',
-        'client/builder/form.ng.js'],
+        'client/stylesheets/font-awesome/font-awesome.min.css',
+        'client/stylesheets/style.css',
+        'client/stylesheets/boxes.css',
+        'client/stylesheets/nform_style.css',
+        'client/builder/builder.ng.html',
+        'client/lib/jquery.ui.core.min.js',
+        'client/lib/jquery.ui.mouse.min.js',
+        'client/lib/jquery.ui.slider.min.js',
+        'client/builder/builder.ng.js',
+        'client/app.ng.js'
+        ],
         'client'
     );
 });
