@@ -16,14 +16,16 @@ Package.onUse(function(api) {
     //api.use('templating', 'client');
     api.use('jquery', 'client');
     api.use('mrt:jquery-ui-sortable', 'client');
+    api.use('twbs:bootstrap', 'client');
     api.use('angular', 'client');
     api.use('angular:angular-route', 'client');
     api.use('angularui:angular-ui-router', 'client');
-    api.use('twbs:bootstrap', 'client');
     api.use('mrt:datatables', 'client');
     api.use('fortawesome:fontawesome', 'client');
     api.use('dbernhard:jquery-ui-draggable', 'client');
     api.use('scmart:jquery-timepicker', 'client');
+    api.use('eastamis:angular-bootstrap-colorpicker', 'client');
+    api.use('kidovate:bootstrap-slider', 'client');
     //it is important to include the html file before the js
     api.addFiles([
         'client/stylesheets/font-awesome/font-awesome.min.css',
@@ -31,9 +33,6 @@ Package.onUse(function(api) {
         'client/stylesheets/boxes.css',
         'client/stylesheets/nform_style.css',
         'client/builder/builder.ng.html',
-        'client/lib/jquery.ui.core.min.js',
-        'client/lib/jquery.ui.mouse.min.js',
-        'client/lib/jquery.ui.slider.min.js',
         'client/builder/builder.ng.js',
         'client/app.ng.js'
         ],
