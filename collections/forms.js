@@ -1,0 +1,1 @@
+var Forms = new Mongo.Collection('forms');
